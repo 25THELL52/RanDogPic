@@ -25,7 +25,6 @@ import com.example.randogpic.data.repository.RandomDogPicRepository
 import com.example.randogpic.data.repository.RandomDogPicRepositoryImpl
 import com.example.randogpic.data.repository.RepositoryCallback
 import com.example.randogpic.model.Dog
-import com.example.randogpic.testHooks.IdlingEntity
 import com.example.randogpic.util.EspressoIdlingResource
 import com.example.randogpic.util.ImageLoader
 import com.example.randogpic.util.ImageLoaderImpl
