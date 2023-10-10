@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">RanDogPic</string>
+    <string name="error_default_text">ERROR</string>
+    <string name="error_retry_default_text">Retry\n</string>
+    <string name="loading_default_text">Loading\n</string>
+</resources>
