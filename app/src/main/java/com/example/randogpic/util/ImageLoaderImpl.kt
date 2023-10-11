@@ -10,7 +10,7 @@ open class ImageLoaderImpl :ImageLoader {
 
         Glide.with(context).load(url).into(imageView)
         EspressoIdlingResource.decrement()
-        Log.d("MainActivity","isIdleNow2() ${EspressoIdlingResource.getIdlingResource()?.isIdleNow}")
+        Log.d("ImageLoaderImpl","isIdleNow2() ${EspressoIdlingResource.getIdlingResource()?.isIdleNow}")
 
     }
 

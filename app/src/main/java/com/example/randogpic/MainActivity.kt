@@ -12,7 +12,6 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.randogpic.data.repository.RandomDogPicRepository
 import com.example.randogpic.databinding.ActivityMainBinding
 import com.example.randogpic.model.Dog
-import com.example.randogpic.testHooks.IdlingEntity
 import com.example.randogpic.util.EspressoIdlingResource
 import com.example.randogpic.util.ImageLoaderImpl
 import com.example.randogpic.viewModel.RandomDogPicViewModel
@@ -85,7 +84,7 @@ class MainActivity : AppCompatActivity() {
 
         Log.d(
             "MainActivity",
-            "inside showLoading($it) errorVisibility = ${binding.errorContainer.root.isVisible}" +
+            "inside showLoading($it) loadingVisibility = ${binding.loadingContainer.root.isVisible}" +
                     "Thread :${Thread.currentThread().name}"
         )
 
@@ -98,13 +97,11 @@ class MainActivity : AppCompatActivity() {
 
             Log.d("MainActivity", "Thread : ${Thread.currentThread().name}")
 
-            Log.d("MainActivity", "showLoading($it)")
 
         })
         viewModel.getError().observe(this, Observer {
             showError(it)
 
-            Log.d("MainActivity", "showError($it)")
 
         })
 

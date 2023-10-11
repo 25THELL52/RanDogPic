@@ -69,16 +69,16 @@ val DOG = Dog("https://images.dog.ceo/breeds/terrier-american/n02093428_3556.jpg
 class MainActivityTest {
 
 
-    // @get:Rule
-    // var rule: TestRule = InstantTaskExecutorRule()
+    @get:Rule
+    var rule: TestRule = InstantTaskExecutorRule()
 
-    lateinit var viewModelSpy: RandomDogPicViewModel
+    private lateinit var viewModelSpy: RandomDogPicViewModel
 
-    lateinit var repository: RandomDogPicRepository
-    lateinit var imageLoaderSpy: ImageLoaderImpl
+    private lateinit var repository: RandomDogPicRepository
+    private lateinit var imageLoaderSpy: ImageLoaderImpl
 
 
-    lateinit var scenario: ActivityScenario<MainActivity>
+    private lateinit var scenario: ActivityScenario<MainActivity>
 
 
     private fun setUpRepoWithSuccess() {
@@ -88,7 +88,7 @@ class MainActivityTest {
 
         doAnswer {
 
-            Log.d("MainActivityTest:", "doAnswer")
+            Log.d("MainActivityTest:", "doAnswer success")
             val repositoryCallback = it.getArgument<RepositoryCallback>(0)
             repositoryCallback.onSuccess(dog)
 
@@ -116,7 +116,6 @@ class MainActivityTest {
         scenario.onActivity {
 
 
-            //it.removeObservers()
             it.viewModel = viewModelSpy
             it.setUpObservers()
             imageLoaderSpy = spy(ImageLoaderImpl())
@@ -131,7 +130,6 @@ class MainActivityTest {
     private fun removeObservers() {
         scenario.onActivity {
             it.removeObservers()
-            Log.d("MainActivity", "Observers removed :${Thread.currentThread().name}")
 
         }
     }

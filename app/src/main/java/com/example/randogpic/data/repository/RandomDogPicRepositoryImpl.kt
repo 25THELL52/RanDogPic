@@ -16,7 +16,7 @@ open class RandomDogPicRepositoryImpl(private val api: RandomDogPicApi) : Random
 
 
 
-        Log.d("RandomDogPicRepoImpl", "sending a request to the url Thread :${Thread.currentThread().name}")
+     Log.d("RandomDogPicRepoImpl", "sending a request to the url Thread :${Thread.currentThread().name}")
 
         api.getDog().enqueue(wrapCallBack(callback))
 
