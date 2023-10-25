@@ -5,3 +5,5 @@
 ### Architechture : MVVM
 ### libraries : Retrofit (Callbacks), Glide
 ### Testing : Unit testing: jUnit4, Mockito | UI testing: Espresso
+### viewBinding
+### RecyclerView
